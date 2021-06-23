@@ -113,11 +113,17 @@ function Cajero() {
                 reaccion();
                 break;
             case 3:
-                extraccion = parseInt(prompt('Cuanto quiere depositar?'));
+                extraccion = parseInt(prompt('Cuanto quiere extraer?'));
                 total = (saldo - extraccion)
+                if (saldo < extraccion){
                 alert(`la extraccion fue satisfactoria, su saldo actual es ${total}`);
                 imprimirTiquet(2);
                 reaccion();
+            }
+            else{
+                alert('saldo insuficiente!')
+                reaccion();
+            }
                 break;
             case 4:
                 let transferir = parseInt(prompt('A quien desea realizar su transferencia? opcion 1 javier, opcion 2 juan'))
